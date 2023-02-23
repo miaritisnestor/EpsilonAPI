@@ -58,7 +58,7 @@ namespace EpsilonAPI.Controllers
                 {
                     _epsilonContext.Entry(customerFound).CurrentValues.SetValues(customer);
                     _epsilonContext.SaveChanges();
-                    return Ok("Successfully updated");
+                    return Ok(customer);
                 }
                 else
                 {
@@ -84,7 +84,7 @@ namespace EpsilonAPI.Controllers
                 {
                     _epsilonContext.Remove(customerFound);
                     _epsilonContext.SaveChanges();
-                    return Ok("Successfully deleted");
+                    return Ok(customer);
                 }
                 else
                 {
