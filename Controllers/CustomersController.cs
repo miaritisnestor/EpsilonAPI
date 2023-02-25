@@ -73,7 +73,7 @@ namespace EpsilonAPI.Controllers
 
         }
 
-        [HttpDelete("delete_customer")]
+        [HttpPost("delete_customer")]
         public ActionResult<Customer> DeleteCustomer(Customer customer)
         {
             try
