@@ -1,5 +1,7 @@
 ﻿using EpsilonDbContext.DbContexts;
 using EpsilonDbContext.Models;
+using EpsilonUI.Dtos;
+using EpsilonUI.Dtos.Interfaces;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -97,6 +99,21 @@ namespace EpsilonAPI.Controllers
             }
 
         }
+
+        [HttpGet("print_person_name")]
+        public void printCompanyPersonName()
+        {
+            CompanyPerson? companyPerson = new CompanyPerson();
+
+            Manager manager = new Manager() { Name = "NESTOR" };
+            Employee employee = new Employee() { Name = "nestor" };
+
+            companyPerson.printCompanyPersonName(manager);
+            companyPerson.printCompanyPersonName(employee);
+
+        }
+
+        
 
     }
 }
